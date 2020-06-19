@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一直有写Blog的计划，最近在灵汐调研比较多，各种整理出来的知识就这么丢掉挺可惜的，遂弄个Blog记录一下，方便随时查阅。 用了Hexo来搭框架（主要是图别人弄好的主题），选了别的博主推荐的concise主题。 严格按照CMU的官方配色设置了标题的红色（#CC002B），导航栏弄了About，Publications和Archives三栏（目前并没有Publication，痛苦），具体内容日后">
+  <meta name="description" content="前段时间读了一些论文（Reasoning R-CNN，CLEVRER），意在寻找知识的结构化表示的灵感，有一些心得。 吴博士选择了一个应用场景：在监控视频中搜索一个可以用语言描述，而无图像正例的实体。 此即所谓零样本学习。 为了做这件事，设计的组成部分有： * 实体 * 场景 * 先验知识 * 空间关系 * 时间关系 * 语义关系 * 程序树 实体 实体是从视频中采集的人和物，记为。为此">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇文章">
-<meta property="og:url" content="http://yoursite.com/2020/06/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="关于视频推理的零样本学习的一点思考">
+<meta property="og:url" content="http://yoursite.com/2020/06/19/%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E6%8E%A8%E7%90%86%E7%9A%84%E9%9B%B6%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/index.html">
 <meta property="og:site_name" content="Yuchen&#39;s Homepage">
-<meta property="og:description" content="一直有写Blog的计划，最近在灵汐调研比较多，各种整理出来的知识就这么丢掉挺可惜的，遂弄个Blog记录一下，方便随时查阅。 用了Hexo来搭框架（主要是图别人弄好的主题），选了别的博主推荐的concise主题。 严格按照CMU的官方配色设置了标题的红色（#CC002B），导航栏弄了About，Publications和Archives三栏（目前并没有Publication，痛苦），具体内容日后">
+<meta property="og:description" content="前段时间读了一些论文（Reasoning R-CNN，CLEVRER），意在寻找知识的结构化表示的灵感，有一些心得。 吴博士选择了一个应用场景：在监控视频中搜索一个可以用语言描述，而无图像正例的实体。 此即所谓零样本学习。 为了做这件事，设计的组成部分有： * 实体 * 场景 * 先验知识 * 空间关系 * 时间关系 * 语义关系 * 程序树 实体 实体是从视频中采集的人和物，记为。为此">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-16T17:03:27.000Z">
-<meta property="article:modified_time" content="2020-06-17T09:28:07.127Z">
+<meta property="article:published_time" content="2020-06-19T01:10:52.000Z">
+<meta property="article:modified_time" content="2020-06-19T08:17:55.412Z">
 <meta property="article:author" content="Yuchen Zhou">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/06/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
+<link rel="canonical" href="http://yoursite.com/2020/06/19/%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E6%8E%A8%E7%90%86%E7%9A%84%E9%9B%B6%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>第一篇文章 | Yuchen's Homepage</title>
+  <title>关于视频推理的零样本学习的一点思考 | Yuchen's Homepage</title>
   
 
 
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/19/%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E6%8E%A8%E7%90%86%E7%9A%84%E9%9B%B6%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第一篇文章
+          关于视频推理的零样本学习的一点思考
         </h1>
 
         <div class="post-meta">
@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-17 01:03:27 / Modified: 17:28:07" itemprop="dateCreated datePublished" datetime="2020-06-17T01:03:27+08:00">2020-06-17</time>
+              <time title="Created: 2020-06-19 09:10:52 / Modified: 16:17:55" itemprop="dateCreated datePublished" datetime="2020-06-19T09:10:52+08:00">2020-06-19</time>
             </span>
 
           
@@ -189,12 +189,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>一直有写Blog的计划，最近在灵汐调研比较多，各种整理出来的知识就这么丢掉挺可惜的，遂弄个Blog记录一下，方便随时查阅。</p>
-<p><del>用了Hexo来搭框架（主要是图别人弄好的主题），选了别的博主推荐的<a href="https://github.com/HmyBmny/hexo-theme-concise" target="_blank" rel="noopener">concise主题</a>。</del></p>
-<p><del>严格按照CMU的官方配色设置了标题的红色（#CC002B），导航栏弄了About，Publications和Archives三栏（目前并没有Publication，痛苦），具体内容日后再补吧。</del></p>
-<p><del>为什么在Chrome下网页渲染不出来呢…</del></p>
-<p><del>（更新：发现清理了浏览记录就好了，目测是浏览器对静态网页的刷新可能有惰性）</del></p>
-<p>因为不能放自己喜欢的flamingo icon，决定放弃concise主题，转投文档明晰好读的NexT了。懒得折腾，先用自定义的Gemini主题吧。有空再改了。</p>
+        <p>前段时间读了一些论文（Reasoning R-CNN，CLEVRER），意在寻找知识的结构化表示的灵感，有一些心得。</p>
+<p>吴博士选择了一个应用场景：在监控视频中搜索一个可以用语言描述，而无图像正例的实体。</p>
+<p>此即所谓零样本学习。</p>
+<p>为了做这件事，设计的组成部分有： * 实体 * 场景 * 先验知识 * 空间关系 * 时间关系 * 语义关系 * 程序树</p>
+<h2 id="实体">实体</h2>
+<p>实体是从视频中采集的人和物，记为。为此，需要从每一帧中 1. 识别实体的边界框或掩膜 2. 识别实体的类别 3. 抽取实体的各种属性</p>
+<p>因为视频是一个图片列表，包含了若干次的图像探测和分类，故需要注意： 1. 在对人和物的追踪过程中，要保证其对应的实体存在且唯一（考虑人和物交叉，丢失边界框一段时间后又复得等问题） 2. 每个实体的类别在视频持续过程中应保持一致，不能突变 3. 实体的属性在视频持续过程中应保持一致（除确实变化的部分，例如位置坐标）</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">表头</th>
+<th style="text-align: center;">表头</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">单元格</td>
+<td style="text-align: center;">单元格</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">单元格</td>
+<td style="text-align: center;">单元格</td>
+</tr>
+</tbody>
+</table>
+<p>技术手段： 留白</p>
+<h2 id="场景">场景</h2>
+<p>场景是一个</p>
+<h2 id="空间关系">空间关系</h2>
+<p>空间关系定义为两实体间相对的空间位置关系。考虑到监控的拍摄角度、空间畸变等，不太适合用绝对的坐标来标定实体的位置。故只使用三种</p>
+<ol type="1">
+<li>相邻（<em>如何定义相邻？</em>）</li>
+<li></li>
+</ol>
+<h2 id="时间关系">时间关系</h2>
 
     </div>
 
@@ -209,11 +238,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/06/19/%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E6%8E%A8%E7%90%86%E7%9A%84%E9%9B%B6%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" rel="next" title="关于视频推理的零样本学习的一点思考">
-      关于视频推理的零样本学习的一点思考 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/06/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" rel="prev" title="第一篇文章">
+      <i class="fa fa-chevron-left"></i> 第一篇文章
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -272,6 +301,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实体"><span class="nav-number">1.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">2.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间关系"><span class="nav-number">3.</span> <span class="nav-text">空间关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间关系"><span class="nav-number">4.</span> <span class="nav-text">时间关系</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

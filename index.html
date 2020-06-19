@@ -146,6 +146,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/19/%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E6%8E%A8%E7%90%86%E7%9A%84%E9%9B%B6%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuchen Zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuchen's Homepage">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/19/%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E6%8E%A8%E7%90%86%E7%9A%84%E9%9B%B6%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">关于视频推理的零样本学习的一点思考</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-19 09:10:52 / Modified: 16:17:55" itemprop="dateCreated datePublished" datetime="2020-06-19T09:10:52+08:00">2020-06-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>前段时间读了一些论文（Reasoning R-CNN，CLEVRER），意在寻找知识的结构化表示的灵感，有一些心得。</p>
+<p>吴博士选择了一个应用场景：在监控视频中搜索一个可以用语言描述，而无图像正例的实体。</p>
+<p>此即所谓零样本学习。</p>
+<p>为了做这件事，设计的组成部分有： * 实体 * 场景 * 先验知识 * 空间关系 * 时间关系 * 语义关系 * 程序树</p>
+<h2 id="实体">实体</h2>
+<p>实体是从视频中采集的人和物，记为。为此，需要从每一帧中 1. 识别实体的边界框或掩膜 2. 识别实体的类别 3. 抽取实体的各种属性</p>
+<p>因为视频是一个图片列表，包含了若干次的图像探测和分类，故需要注意： 1. 在对人和物的追踪过程中，要保证其对应的实体存在且唯一（考虑人和物交叉，丢失边界框一段时间后又复得等问题） 2. 每个实体的类别在视频持续过程中应保持一致，不能突变 3. 实体的属性在视频持续过程中应保持一致（除确实变化的部分，例如位置坐标）</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">表头</th>
+<th style="text-align: center;">表头</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">单元格</td>
+<td style="text-align: center;">单元格</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">单元格</td>
+<td style="text-align: center;">单元格</td>
+</tr>
+</tbody>
+</table>
+<p>技术手段： 留白</p>
+<h2 id="场景">场景</h2>
+<p>场景是一个</p>
+<h2 id="空间关系">空间关系</h2>
+<p>空间关系定义为两实体间相对的空间位置关系。考虑到监控的拍摄角度、空间畸变等，不太适合用绝对的坐标来标定实体的位置。故只使用三种</p>
+<ol type="1">
+<li>相邻（<em>如何定义相邻？</em>）</li>
+<li></li>
+</ol>
+<h2 id="时间关系">时间关系</h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -272,7 +365,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
