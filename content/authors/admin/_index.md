@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: Yuchen Zhou
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: 
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Yuchen
+last_name: Zhou
 
 # Status emoji
 status:
@@ -20,12 +20,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: PhD Student in Cognitive Neuroscience
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: Carnegie Mellon University
+    url:
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -183,4 +183,6 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Hi, this is Yuchen, a learner, a reader, a person that takes plasure in thinking. I am currently a PhD student in Cognitive Neuroscience at Carnegie Mellon Univerisity advised by Michael J. Tarr Tarr and Leila Wehbe.
+
+I seek to understand how humans learn and process language through interactions between speech, texts, and visual inputs, from a perspective in which computational models and neurological data are combined.
